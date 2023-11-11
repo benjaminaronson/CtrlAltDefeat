@@ -37,7 +37,7 @@ public class Cannon : Freezable
     void Update()
     {
 				// no active cannonball + not frozen
-				if(this.m_activeCannonball == null && !isFrozen()){
+				if(!this.isActive() && !isFrozen()){
 					// if there's no active bullet and we haven't started firing
 					if(!this.m_fire){
 						// if we're unparented, just start firing
@@ -83,6 +83,17 @@ public class Cannon : Freezable
 			this.m_fire = true;
 		}
 		
+		public bool hasActiveCannonball()
+		{
+			return this.m_activeCannonball != null;
+		}
+
+		// considering a cannon active if there is still a cannonball somewhere along its hierarchy.
+		public bool isActive()
+		{
+			return this.hasActiveCannonball() || (this.hasChildCannon() ? this.m_childCannon.isActive() : false);
+		}
+
 		public void setActiveCannonball(GameObject cannonball){
 			this.m_activeCannonball = cannonball;
 		}
