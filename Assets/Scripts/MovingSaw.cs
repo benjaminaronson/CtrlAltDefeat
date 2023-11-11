@@ -23,7 +23,7 @@ public class MovingSaw : SimpleMovingPlatform
 		private void OnCollisionEnter2D(Collision2D collision){
 			if(collision.gameObject.tag == "Player" && !isFrozen()){
 				// TODO: kill player and stuff
-				Debug.Log("Player died!");
+				collision.gameObject.GetComponent<PlayerDeath>().die();
 			}
 		}
 }

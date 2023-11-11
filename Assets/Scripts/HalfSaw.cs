@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HalfSaw : Freezable
 {
-		public float rotationSpeed = 2;
+		public float rotationSpeed = 360;
 
     // Start is called before the first frame update
     void Start()
     {
-				player = GameObject.FindGameObjectWithTag("Player");
+				//player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class HalfSaw : Freezable
         if(!isFrozen()){
 					transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 				}
+
     }
 		
 		private void OnCollisionEnter2D(Collision2D collision){
@@ -27,7 +28,7 @@ public class HalfSaw : Freezable
 					// check if other is player
 					if(collision.gameObject.tag == "Player"){
 							// fun player death logic
-							// collision.gameObject.GetComponent<PlayerDeath>().die();
+							collision.gameObject.GetComponent<PlayerDeath>().die();
 							Debug.Log("Player died!");
 					}
 			}

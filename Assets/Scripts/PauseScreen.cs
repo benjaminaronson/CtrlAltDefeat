@@ -19,9 +19,9 @@ public class PauseScreen : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             isPaused = !isPaused;
-            if (isPaused)
+            
             //freezeEnemies();
-            Debug.Log(isPaused);
+            
         }
     }
     /*public void freezeEnemies()
@@ -41,22 +41,16 @@ public class PauseScreen : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                for (int i = 0; i < enemies.Length; i++)
-                {
-                    if (enemies[i].gameObject.GetComponent<RotateSaw>() != null)
-                        enemies[i].GetComponent<RotateSaw>().freeze();
-                }
+                collision.gameObject.GetComponent<Freezable>().freeze();
+                
             }
         }
         else
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                for (int i = 0; i < enemies.Length; i++)
-                {
-                    if (enemies[i].gameObject.GetComponent<RotateSaw>() != null)
-                        enemies[i].GetComponent<RotateSaw>().unfreeze();
-                }
+                collision.gameObject.GetComponent<Freezable>().unfreeze();
+                
             }
         }
     }

@@ -55,5 +55,7 @@ public class SimpleMovingPlatform : Freezable
 				// increment elapsed time
 				m_elapsedTime += Time.deltaTime;
 			}
+			
+		
     }
 }
