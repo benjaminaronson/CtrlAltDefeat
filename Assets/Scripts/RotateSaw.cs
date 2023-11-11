@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class RotateSaw : MonoBehaviour
 {
-    public float rotationSpeed;
+    public static float rotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        rotationSpeed = 360;
+        rotationSpeed = 720;
     }
-
+    public  void freeze()
+    {
+        rotationSpeed = 0;
+    }
+    public  void unfreeze()
+    {
+        rotationSpeed = 720;
+    }
     // Update is called once per frame
     void Update()
     {

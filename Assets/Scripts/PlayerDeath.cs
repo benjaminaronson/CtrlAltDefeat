@@ -17,7 +17,7 @@ public class PlayerDeath : MonoBehaviour
         Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
     }
 
-    void die()
+    public void die()
     {
         PlayerMovement.dead = true;
         StartCoroutine(Died());
@@ -30,13 +30,18 @@ public class PlayerDeath : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         Time.timeScale = 1f;
         PlayerMovement.dead = false;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<RotateSaw>().unfreeze();
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) {
             
             die();
         }
-    }
+    }*/
 }

@@ -5,29 +5,27 @@ using UnityEngine;
 public class HalfSaw : MonoBehaviour
 {
 		public float rotationSpeed = 2;
-		
+		public GameObject player;
 		public bool frozen = false;
 		
     // Start is called before the first frame update
     void Start()
     {
-        
+		player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!frozen){
-					transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-				}
+        
     }
 		
 		private void OnCollisionEnter2D(Collision2D collision){
 			// kill player if they land on edge collider
 			if (collision.otherCollider.GetType() == typeof(EdgeCollider2D))
 			{
-					// TODO: replace with real player logic
-					Debug.Log("Played died!");
+			player.GetComponent<PlayerDeath>().die();
+					
 			}
 		}
 }
