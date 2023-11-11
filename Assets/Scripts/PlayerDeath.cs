@@ -31,10 +31,6 @@ public class PlayerDeath : MonoBehaviour
         Time.timeScale = 1f;
         PlayerMovement.dead = false;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies)
-        {
-            enemy.GetComponent<RotateSaw>().unfreeze();
-        }
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

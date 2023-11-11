@@ -32,17 +32,20 @@ public class Cannonball : Freezable
 		}
 		
 		public void OnCollisionEnter2D(Collision2D collision){
-				if(!isFrozen()){
-					// destroy
-					Destruct();
-					
-					// kill player
-					if(collision.gameObject.tag == "Player"){
-						// TODO: player kill logic here
-						Debug.Log("Player died!");
-					}
+			if (!isFrozen())
+			{
+				// kill player
+				if (collision.gameObject.tag == "Player")
+				{
+					// TODO: player kill logic here
+					Debug.Log("Player died!");
+					collision.gameObject.GetComponent<PlayerDeath>().die();
 				}
-		}
+
+				// destroy
+				Destruct();
+			}
+        }
 		
 		public void Destruct(){
 			Destroy(gameObject);
