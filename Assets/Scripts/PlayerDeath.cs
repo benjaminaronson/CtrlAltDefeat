@@ -23,6 +23,14 @@ public class PlayerDeath : MonoBehaviour
         StartCoroutine(Died());
         
         transform.position = new Vector2(-7.87f, 0f);
+
+        // unfreeze everything
+        // find all sections
+        GameObject[] sections = GameObject.FindGameObjectsWithTag("section");
+
+        foreach (GameObject section in sections) {
+            section.GetComponent<PauseScreen>().isPaused = false;
+        }
     }
     IEnumerator Died()
     {

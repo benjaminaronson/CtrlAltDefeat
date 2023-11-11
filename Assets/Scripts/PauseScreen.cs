@@ -42,7 +42,6 @@ public class PauseScreen : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 collision.gameObject.GetComponent<Freezable>().freeze();
-                
             }
         }
         else
