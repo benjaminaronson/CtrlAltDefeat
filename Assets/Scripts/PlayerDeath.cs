@@ -6,11 +6,14 @@ public class PlayerDeath : MonoBehaviour
 {
     public GameObject respawnPoint;
 
+    Rigidbody2D rb;
+
     float fixedDeltaTime;
     // Start is called before the first frame update
     void Start()
     {
         fixedDeltaTime = Time.fixedDeltaTime;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,8 +25,11 @@ public class PlayerDeath : MonoBehaviour
     public void die()
     {
         PlayerMovement.dead = true;
-        StartCoroutine(Died());
+        //StartCoroutine(Died());
         
+        // reset velocity
+        rb.velocity = Vector3.zero;
+
         transform.position = respawnPoint.transform.position;
 
         // unfreeze everything

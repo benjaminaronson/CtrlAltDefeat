@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (!dead)
         {
             float x_movement = Input.GetAxis("Horizontal");
+
             if (x_movement > 0)
             {
                 if (grounded)
@@ -86,6 +87,12 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
             }*/
+        } else
+        {
+            if (Input.GetAxis("Horizontal") == 0 && !Input.anyKeyDown)
+            {
+                PlayerMovement.dead = false;
+            }
         }
     }
 
