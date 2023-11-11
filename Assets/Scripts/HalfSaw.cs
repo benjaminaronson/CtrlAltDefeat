@@ -24,8 +24,12 @@ public class HalfSaw : Freezable
 			// kill player if they land on edge collider
 			if (collision.otherCollider.GetType() == typeof(EdgeCollider2D))
 			{
-					// TODO: replace with real player logic
-					Debug.Log("Played died!");
+					// check if other is player
+					if(collision.gameObject.tag == "Player"){
+							// fun player death logic
+							// collision.gameObject.GetComponent<PlayerDeath>().die();
+							Debug.Log("Player died!");
+					}
 			}
 		}
 }
