@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49b3922c2b74724e9ab9da0428a8fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump_up: {fileID: 21300000, guid: a735ad0d6e81abe469d41cec56bcd8af, type: 3}
+  jump_down: {fileID: 21300000, guid: 7b2fc9db9276b80478e36d68e2d63e83, type: 3}
   jump_velocity: 17
 --- !u!114 &8347601361821349670
 MonoBehaviour:
