@@ -28,7 +28,9 @@ public class PressStart : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
+        
         rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
     }
 }

@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192054735229619871, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8698852113465644101, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
       propertyPath: firingDelay
       value: 0.25
@@ -318,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_Name
       value: Basic Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7266798161151999602, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_LocalScale.x
@@ -1024,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192054735229619871, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8698852113465644101, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
       propertyPath: childCannon
       value: 
@@ -1048,6 +1060,30 @@ PrefabInstance:
     - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_Name
       value: Basic Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -0.50537837
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 0.5278454
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -0.0562934
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 0.53096735
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: 0.46031016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522058596808684978, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: 0.5332237
       objectReference: {fileID: 0}
     - target: {fileID: 7266798161151999602, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_LocalScale.x
@@ -1205,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_Name
       value: Basic Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7266798161151999602, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_LocalScale.x
@@ -1471,6 +1511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 8192054735229619871, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8698852113465644101, guid: 750fe4face35a3b45b84370a7047debf, type: 3}
       propertyPath: childCannon
       value: 
@@ -1570,6 +1614,10 @@ PrefabInstance:
     - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_Name
       value: Basic Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089891802353084317, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7266798161151999602, guid: 0703dec8c1f218b4998d06a7de26a5de, type: 3}
       propertyPath: m_LocalScale.x
