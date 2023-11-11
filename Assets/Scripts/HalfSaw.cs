@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HalfSaw : MonoBehaviour
+public class HalfSaw : Freezable
 {
 		public float rotationSpeed = 2;
-		
-		public bool frozen = false;
 		
     // Start is called before the first frame update
     void Start()
@@ -17,7 +15,7 @@ public class HalfSaw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!frozen){
+        if(!isFrozen()){
 					transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 				}
     }
