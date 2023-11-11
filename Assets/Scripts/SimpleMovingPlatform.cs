@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class SimpleMovingPlatform : MonoBehaviour
+public class SimpleMovingPlatform : Freezable
 {
 		public GameObject endPoint;
 		
@@ -23,7 +23,7 @@ public class SimpleMovingPlatform : MonoBehaviour
 		private Vector3 m_direction;
 		
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
 			m_startPoint = transform.position;
 			m_endPoint = endPoint.transform.position;
@@ -34,24 +34,26 @@ public class SimpleMovingPlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-			// current position based on time
-			// this is normalized to path length (makes speed consistent)
-			float pos = (float)Math.Cos( (m_elapsedTime * Math.PI * 2) / timePerPeriod );
-			
-			// normalize to 0, 1 range
-			pos = (-pos + 1) / 2;
-			
-			// determine position in path
-			// 0 = startPoint
-			// 1 = endPoint
-			Vector3 position = m_startPoint + m_direction * pos;
-			
-			// set position
-			transform.position = position;
-			
-			// increment elapsed time
-			m_elapsedTime += Time.deltaTime;
+			if(!isFrozen()){
+				// current position based on time
+				// this is normalized to path length (makes speed consistent)
+				float pos = (float)Math.Cos( (m_elapsedTime * Math.PI * 2) / timePerPeriod );
+				
+				// normalize to 0, 1 range
+				pos = (-pos + 1) / 2;
+				
+				// determine position in path
+				// 0 = startPoint
+				// 1 = endPoint
+				Vector3 position = m_startPoint + m_direction * pos;
+				
+				// set position
+				transform.position = position;
+				
+				// increment elapsed time
+				m_elapsedTime += Time.deltaTime;
+			}
     }
 }
