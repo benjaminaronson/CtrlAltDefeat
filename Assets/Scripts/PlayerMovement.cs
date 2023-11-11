@@ -17,12 +17,17 @@ public class PlayerMovement : MonoBehaviour
     bool grounded = true;
     float speed = 10.0f;
     public static int score = 0;
+
+    private float m_defaultX;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        m_defaultX = transform.localScale.x;
     }
 
     // Update is called once per frame
@@ -35,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (grounded)
                 anim.SetBool("IsRunning", true);
-                transform.localScale = new Vector3(0.0895f, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(m_defaultX, transform.localScale.y, transform.localScale.z);
             }
             else if (x_movement < 0)
             {
@@ -45,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                     anim.SetBool("IsRunning", true);
                 }
                 
-                transform.localScale = new Vector3(-0.0895f, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(-m_defaultX, transform.localScale.y, transform.localScale.z);
             }
             else
             {
