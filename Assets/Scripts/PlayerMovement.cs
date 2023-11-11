@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static bool dead = false;
     Rigidbody2D rb;
     public float jump_velocity = 17;
     bool grounded = true;
@@ -21,12 +22,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x_movement = Input.GetAxis("Horizontal");
+        if (!dead)
+        {
+            float x_movement = Input.GetAxis("Horizontal");
 
-        Vector2 movement = new Vector2(x_movement, 0f);
-        transform.Translate(movement * speed * Time.deltaTime);
-        bool is_jumping = Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W);
-        if (is_jumping && grounded) Jump();
+            Vector2 movement = new Vector2(x_movement, 0f);
+            transform.Translate(movement * speed * Time.deltaTime);
+            bool is_jumping = Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W);
+            if (is_jumping && grounded) Jump();
+        }
     }
 
     void Jump()
