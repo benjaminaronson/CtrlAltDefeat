@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SimpleMovingPlatform : Freezable
 {
+		public GameObject platform;
 		public GameObject endPoint;
 		
 		// movement characteristics

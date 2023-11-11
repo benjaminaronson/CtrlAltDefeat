@@ -17,7 +17,7 @@ public class MovingSaw : SimpleMovingPlatform
     {
 			base.Update();
 			
-			if(!isFrozen()) transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+			if(!isFrozen()) platform.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 		
 		private void OnCollisionEnter2D(Collision2D collision){

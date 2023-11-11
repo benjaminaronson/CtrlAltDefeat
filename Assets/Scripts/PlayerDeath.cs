@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+    public GameObject respawnPoint;
+
     float fixedDeltaTime;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class PlayerDeath : MonoBehaviour
         PlayerMovement.dead = true;
         StartCoroutine(Died());
         
-        transform.position = new Vector2(-7.87f, 0f);
+        transform.position = respawnPoint.transform.position;
 
         // unfreeze everything
         // find all sections
@@ -38,7 +40,6 @@ public class PlayerDeath : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         Time.timeScale = 1f;
         PlayerMovement.dead = false;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)
