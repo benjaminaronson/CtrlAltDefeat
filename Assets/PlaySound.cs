@@ -22,7 +22,7 @@ public class PlaySound : MonoBehaviour
         if (collision.gameObject.CompareTag("Start") && !hasPlayed)
         {
             crash.Play();
-            hasPlayed = true;
+            //hasPlayed = true;
         }
     }
 }
