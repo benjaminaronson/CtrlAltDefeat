@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1901713946578652564}
   - component: {fileID: 1482035889972051525}
   - component: {fileID: 3714946593971002039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pause Section
   m_TagString: section
   m_Icon: {fileID: 0}
@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: 0
+  pauseButton2: 0
+  instructionsController: {fileID: 0}
   isPaused: 0
 --- !u!50 &1482035889972051525
 Rigidbody2D:
