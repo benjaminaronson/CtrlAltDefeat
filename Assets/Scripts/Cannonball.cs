@@ -31,14 +31,12 @@ public class Cannonball : Freezable
 				transform.localEulerAngles = new Vector3(0, 0, direction);
 		}
 		
-		public void OnCollisionEnter2D(Collision2D collision){
+		public void OnCollisionStay2D(Collision2D collision){
 			if (!isFrozen() && collision.gameObject.GetComponent<Cannonball>() == null)
 			{
 				// kill player
 				if (collision.gameObject.tag == "Player")
 				{
-					// TODO: player kill logic here
-					Debug.Log("Player died!");
 					collision.gameObject.GetComponent<PlayerDeath>().die();
 				}
 
