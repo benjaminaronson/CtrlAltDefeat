@@ -20,12 +20,12 @@ public class PlayerDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
+        //Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
     }
 
     public void die()
     {
-        PlayerMovement.dead = true;
+        //PlayerMovement.dead = true;
         //StartCoroutine(Died());
         
         // reset velocity

@@ -1,134 +1,73 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Animator anim;
-    public Sprite jump_up;
-    public Sprite jump_down;
-    public Sprite idle;
-    SpriteRenderer sr;
-    public static bool dead = false;
-    Rigidbody2D rb;
-    public float jump_velocity = 17;
-    bool grounded = true;
-    float speed = 10.0f;
-    public static int score = 0;
-    public bool useStupidCorrection = false;
-    private float m_defaultX;
+    public CharacterController2D controller;
+    
+    public float movementSpeed = 2.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    public Sprite idleSprite;
+    public Sprite jumpUp;
+    public Sprite jumpDown;
+
+    Animator animator;
+    Rigidbody2D rb;
+    SpriteRenderer sr;
+
+    private float m_horizontalMovement = 0.0f;
+    private bool m_jumping = false;
+
+    private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
-
-        m_defaultX = transform.localScale.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (!dead)
+        // get input for fixed update method
+        m_horizontalMovement = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
-            float x_movement = Input.GetAxis("Horizontal");
-
-            if (x_movement > 0)
-            {
-                if (grounded)
-                    anim.SetBool("IsRunning", true);
-                transform.localScale = new Vector3(m_defaultX, transform.localScale.y, transform.localScale.z);
-            }
-            else if (x_movement < 0)
-            {
-                if (grounded)
-                {
-
-                    anim.SetBool("IsRunning", true);
-                }
-
-                transform.localScale = new Vector3(-m_defaultX, transform.localScale.y, transform.localScale.z);
-            }
-            else
-            {
-                anim.SetBool("IsRunning", false);
-            }
-
-            Vector2 movement = new Vector2(x_movement, 0f);
-            transform.Translate(movement * speed * Time.deltaTime);
-            bool is_jumping = Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W);
-            if (is_jumping && grounded) Jump();
-
-            if (rb.velocity.y > 0f && !grounded)
-            {
-                anim.enabled = false;
-                sr.sprite = jump_up;
-
-            }
-            if (grounded)
-            {
-                anim.enabled = true;
-                sr.sprite = idle;
-            }
-            else if (rb.velocity.y < 0f)
-            {
-                anim.enabled = false;
-                sr.sprite = jump_down;
-
-            }
-            /*else
-            {
-                if (rb.velocity.x == 0f)
-                {
-                    
-                }
-            }*/
+            m_jumping = true;
         }
-        else if (useStupidCorrection)
+
+        if(controller.isGrounded())
         {
-            if (Input.GetAxis("Horizontal") == 0 && !Input.anyKeyDown)
+            // enable animation + use idle sprite
+            sr.sprite = idleSprite;
+            animator.enabled = true;
+
+            // running animation
+            animator.SetBool("IsRunning", m_horizontalMovement != 0.0f);
+        } else
+        {
+            // disable animation
+            animator.enabled = false;
+
+            if(rb.velocity.y > 0.0f)
             {
-                PlayerMovement.dead = false;
+                sr.sprite = jumpUp;
+            } else
+            {
+                sr.sprite = jumpDown;
             }
-        }
-        else
-        {
-            PlayerMovement.dead = false;
         }
     }
 
-    void Jump()
+    private void FixedUpdate()
     {
-        GetComponent<SpriteRenderer>().sprite = jump_up;
-        rb.velocity = new Vector2(rb.velocity.x, jump_velocity);
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        grounded = false;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+        float move = (m_horizontalMovement * movementSpeed) * Time.fixedDeltaTime;
         
-            grounded = true;
-        
-    }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ground") || collision.collider.GetType() == typeof(CircleCollider2D) 
-            || collision.gameObject.CompareTag("Enemy"))
-        {
-            grounded = true;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            grounded = true;
-        }
+        controller.Move( move, false, m_jumping );
+        m_jumping = false;
     }
 }

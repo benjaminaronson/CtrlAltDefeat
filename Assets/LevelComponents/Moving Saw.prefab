@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1610327306704956814, guid: 3986ad01cbfe66f459aad77a36e38857, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: ab8fc8ba37e1b29489b8a8db05091c93, type: 2}
     - target: {fileID: 3594229464750997152, guid: 3986ad01cbfe66f459aad77a36e38857, type: 3}
       propertyPath: m_Sprite
       value: 
