@@ -6,7 +6,7 @@ public class PauseScreen : MonoBehaviour
 {
     public KeyCode pauseButton;
     public KeyCode pauseButton2;
-
+    public GameObject instructionsController;
     public bool isPaused;
     GameObject[] enemies;
     // Start is called before the first frame update
@@ -21,6 +21,10 @@ public class PauseScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(pauseButton) || Input.GetKeyDown(pauseButton2))
         {
+            
+            instructionsController.GetComponent<PressOneToStopAndStartTime>().instructionsGoAway();
+            
+            
             isPaused = !isPaused;
 
             // if setting paused to true, unfreeze any other sections

@@ -1149,7 +1149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 272262000918178216, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: nextLevelScene
-      value: Scenes/Level1
+      value: Scenes/Level5
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalScale.x
@@ -1206,6 +1206,22 @@ PrefabInstance:
     - target: {fileID: 6186343847953063707, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_Name
       value: LevelExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308955756701606830, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
+      propertyPath: m_Size.x
+      value: 10.272686
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308955756701606830, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
+      propertyPath: m_Size.y
+      value: 19.9575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308955756701606830, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10302448
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308955756701606830, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6181812
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
