@@ -43,6 +43,19 @@ public class PlayerDeath : MonoBehaviour
         foreach (GameObject section in sections) {
             section.GetComponent<PauseScreen>().isPaused = false;
         }
+
+        // delete all cannonballs
+        // TODO: this sucks
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Cannonball cn = enemy.GetComponent<Cannonball>();
+            if (cn != null)
+            {
+                cn.Destruct();
+            }
+        }
     }
     IEnumerator Died()
     {

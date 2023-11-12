@@ -392,7 +392,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 272262000918178216, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: nextLevelScene
-      value: Scenes/Level4
+      value: Scenes/Level3
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalScale.x
@@ -1544,13 +1544,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'you can only freeze one section at a time: use ''1'', ''2'', and ''3'''
+  m_Text: "three sections! \nuse '1', '2', and '3'"
 --- !u!222 &1111230427
 CanvasRenderer:
   m_ObjectHideFlags: 0
