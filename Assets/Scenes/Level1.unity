@@ -1217,8 +1217,12 @@ PrefabInstance:
       value: Kill Zone
       objectReference: {fileID: 0}
     - target: {fileID: 7011940732718969997, guid: 39217155bd1c5a94897d0322f4d7f3e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 31.505152
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011940732718969997, guid: 39217155bd1c5a94897d0322f4d7f3e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0023
+      value: 6.9336
       objectReference: {fileID: 0}
     - target: {fileID: 7011940732718969997, guid: 39217155bd1c5a94897d0322f4d7f3e5, type: 3}
       propertyPath: m_LocalPosition.y
