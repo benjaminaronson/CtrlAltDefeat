@@ -46,17 +46,18 @@ public class Pendulum : Freezable
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isFrozen()) { 
+        //if (!isFrozen()) { 
             if (collision.gameObject.tag == "Player")
             {
-                // fun player death logic
-                collision.gameObject.GetComponent<PlayerDeath>().die();
-                Debug.Log("Player died!");
+                if (collision.otherCollider.GetType() == typeof(EdgeCollider2D))
+                {
+                    collision.gameObject.GetComponent<PlayerDeath>().die();
+                }
             }
-        }
+       // }
         
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    /*private void OnCollisionStay2D(Collision2D collision)
     {
         if (!isFrozen())
         {
@@ -67,5 +68,5 @@ public class Pendulum : Freezable
                 Debug.Log("Player died!");
             }
         }
-    }
+    }*/
 }
