@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeInSpeed: 0.2
   fadeOutSpeed: 1
-  secondsFull: 4
+  secondsFull: 44
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
