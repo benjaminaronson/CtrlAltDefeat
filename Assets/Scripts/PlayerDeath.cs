@@ -27,7 +27,7 @@ public class PlayerDeath : MonoBehaviour
     {
 
         deaths++;
-        PlayerMovement.dead = true;
+        //PlayerMovement.dead = true;
         
         // reset velocity
         rb.velocity = Vector3.zero;
