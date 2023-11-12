@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cannon : Freezable
 {
+		public GameObject cannonSprite;
 		public GameObject cannonball;
 		public GameObject cannonballSpawnOffset;
 		public float cannonballSpeed;
@@ -12,9 +13,10 @@ public class Cannon : Freezable
 		public GameObject childCannon = null;
 		
 		public float firingDelay = 0f;
-		
+
 		// private
-		
+		private SpriteRenderer sr;	
+
 		private GameObject m_activeCannonball = null;
 		private Cannon m_childCannon = null;
 		
@@ -27,6 +29,8 @@ public class Cannon : Freezable
     // Start is called before the first frame update
     void Start()
     {
+		sr = cannonSprite.GetComponent<SpriteRenderer>();
+
         if(childCannon != null){
 					m_childCannon = childCannon.GetComponent<Cannon>();
 					m_childCannon.setHasParent(true);
@@ -63,7 +67,10 @@ public class Cannon : Freezable
 			GameObject inst = Instantiate(cannonball, cannonballSpawnOffset.transform);
 			
 			Cannonball c = inst.GetComponent<Cannonball>();
-			
+
+		//set color
+		inst.GetComponent<SpriteRenderer>().color = sr.color;
+
 			c.speed = cannonballSpeed;
 			c.setParent(this);
 			

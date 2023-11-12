@@ -30,9 +30,13 @@ public class PauseScreen : MonoBehaviour
 
                 foreach (GameObject section in otherSections)
                 {
-                    if (section == gameObject) continue;
+                    PauseScreen ps = section.GetComponent<PauseScreen>();
+                    if (
+                        section == gameObject ||
+                        this.sharesKeys(ps)
+                    ) continue;
 
-                    section.GetComponent<PauseScreen>().isPaused = false;
+                    ps.isPaused = false;
                 }
             }
 
@@ -50,6 +54,11 @@ public class PauseScreen : MonoBehaviour
             }
         }
     }*/
+
+    public bool sharesKeys(PauseScreen other)
+    {
+        return this.pauseButton == other.pauseButton || this.pauseButton == other.pauseButton || this.pauseButton2 == other.pauseButton || this.pauseButton2 == other.pauseButton2;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

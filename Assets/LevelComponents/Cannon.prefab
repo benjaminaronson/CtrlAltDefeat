@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e7a02a328609b46aea9a4f99fbf3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannonSprite: {fileID: 614599485899634436}
   cannonball: {fileID: 3150504110701937346, guid: dfc97987af7cb1146947eb119a95bf65, type: 3}
   cannonballSpawnOffset: {fileID: 8192054735229619871}
   cannonballSpeed: 2

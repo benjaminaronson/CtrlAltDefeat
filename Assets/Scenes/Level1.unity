@@ -225,8 +225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -381, y: -60}
-  m_SizeDelta: {x: 479.6555, y: 199.4288}
+  m_AnchoredPosition: {x: 0, y: 108.53024}
+  m_SizeDelta: {x: 479.6555, y: 110.4893}
   m_Pivot: {x: 0.49999994, y: 0.5}
 --- !u!114 &423849630
 MonoBehaviour:
@@ -255,13 +255,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can start and stop time!  Press '1' to freeze or unfreeze these saws.
+  m_Text: You can start and stop time!  Press '1' to freeze or unfreeze these scary
+    platforms.
 --- !u!222 &423849631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1174,6 +1175,67 @@ Transform:
   - {fileID: 945829198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1545796677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1122719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.30842975
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7722803
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869494577076447826, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783246859274851051, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b049c45655b5d7b448ccac5152a76318, type: 3}
+    - target: {fileID: 4782286130049472509, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c82f54dc771e8fb4891ee078345bf540, type: 3}
 --- !u!1001 &1893455104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1376,6 +1438,10 @@ PrefabInstance:
       propertyPath: pauseButton
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 1901713946578652564, guid: f9d08a52f5cadf04884a7dd7d985566a, type: 3}
+      propertyPath: pauseButton2
+      value: 257
+      objectReference: {fileID: 0}
     - target: {fileID: 8307784973533209662, guid: f9d08a52f5cadf04884a7dd7d985566a, type: 3}
       propertyPath: m_Name
       value: Pause Section
@@ -1477,3 +1543,4 @@ SceneRoots:
   - {fileID: 157410610}
   - {fileID: 1378124758}
   - {fileID: 819574150}
+  - {fileID: 1545796677}
