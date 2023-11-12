@@ -21,6 +21,8 @@ public class CycleLaser : Freezable
     public float offset;
     private int activeLaser;
 
+    private float m_timePassed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +45,8 @@ public class CycleLaser : Freezable
     {
         if (!isFrozen())
         {
-            float timesinceStart = Time.realtimeSinceStartup;
-            int index = (int)(timesinceStart * speedMultiplier + offset) % 2;
+            m_timePassed += Time.deltaTime;
+            int index = (int)(m_timePassed * speedMultiplier + offset) % 2;
             for (int i = 0; i < lasers.Length; i++) { 
                 if (i == index)
                 {

@@ -50,8 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser1: {fileID: 3279842771778530654}
   laser2: {fileID: 8572997227302114400}
-  laser3: {fileID: 8021760158300783382}
   speedMultiplier: 4.29
+  offset: 0
 --- !u!212 &6612905746825864316
 SpriteRenderer:
   m_ObjectHideFlags: 0
