@@ -32,7 +32,7 @@ public class Cannonball : Freezable
 		}
 		
 		public void OnCollisionEnter2D(Collision2D collision){
-			if (!isFrozen())
+			if (!isFrozen() && collision.gameObject.GetComponent<Cannonball>() == null)
 			{
 				// kill player
 				if (collision.gameObject.tag == "Player")

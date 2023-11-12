@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -575,23 +575,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2346
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2346
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4692
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.38
+      value: 8.24
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.45
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -624,6 +624,10 @@ PrefabInstance:
     - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408643784917949387, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6186343847953063707, guid: 10e84f9ca5db5a742aebb0c8578e1eac, type: 3}
       propertyPath: m_Name

@@ -5,6 +5,8 @@ using UnityEngine;
 public class PauseScreen : MonoBehaviour
 {
     public KeyCode pauseButton;
+    public KeyCode pauseButton2;
+
     public bool isPaused;
     GameObject[] enemies;
     // Start is called before the first frame update
@@ -17,7 +19,7 @@ public class PauseScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(pauseButton))
+        if (Input.GetKeyDown(pauseButton) || Input.GetKeyDown(pauseButton2))
         {
             isPaused = !isPaused;
 

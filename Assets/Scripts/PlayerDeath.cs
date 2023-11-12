@@ -8,8 +8,6 @@ public class PlayerDeath : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer sp;
-    public Sprite dead1;
-    public Sprite dead2;
     float fixedDeltaTime;
     // Start is called before the first frame update
     void Start()
@@ -32,10 +30,10 @@ public class PlayerDeath : MonoBehaviour
         
         // reset velocity
         rb.velocity = Vector3.zero;
-        sp.sprite = dead1;
+        /*sp.sprite = dead1;
         StartCoroutine(Died());
         sp.sprite = dead2;
-        StartCoroutine(Died());
+        StartCoroutine(Died());*/
         transform.position = respawnPoint.transform.position;
 
         // unfreeze everything

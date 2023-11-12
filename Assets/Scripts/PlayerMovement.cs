@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool grounded = true;
     float speed = 10.0f;
     public static int score = 0;
-
+    public bool useStupidCorrection = false;
     private float m_defaultX;
 
     // Start is called before the first frame update
@@ -40,17 +40,17 @@ public class PlayerMovement : MonoBehaviour
             if (x_movement > 0)
             {
                 if (grounded)
-                anim.SetBool("IsRunning", true);
+                    anim.SetBool("IsRunning", true);
                 transform.localScale = new Vector3(m_defaultX, transform.localScale.y, transform.localScale.z);
             }
             else if (x_movement < 0)
             {
                 if (grounded)
                 {
-                    
+
                     anim.SetBool("IsRunning", true);
                 }
-                
+
                 transform.localScale = new Vector3(-m_defaultX, transform.localScale.y, transform.localScale.z);
             }
             else
@@ -62,23 +62,23 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(movement * speed * Time.deltaTime);
             bool is_jumping = Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W);
             if (is_jumping && grounded) Jump();
-            
+
             if (rb.velocity.y > 0f && !grounded)
             {
                 anim.enabled = false;
                 sr.sprite = jump_up;
-                
+
             }
             if (grounded)
             {
                 anim.enabled = true;
-                sr.sprite = idle; 
+                sr.sprite = idle;
             }
             else if (rb.velocity.y < 0f)
             {
                 anim.enabled = false;
                 sr.sprite = jump_down;
-                
+
             }
             /*else
             {
@@ -87,12 +87,17 @@ public class PlayerMovement : MonoBehaviour
                     
                 }
             }*/
-        } else
+        }
+        else if (useStupidCorrection)
         {
             if (Input.GetAxis("Horizontal") == 0 && !Input.anyKeyDown)
             {
                 PlayerMovement.dead = false;
             }
+        }
+        else
+        {
+            PlayerMovement.dead = false;
         }
     }
 
