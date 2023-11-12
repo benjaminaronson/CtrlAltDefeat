@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser1: {fileID: 3279842771778530654}
-  laser2: {fileID: 8572997227302114400}
+  laser2: {fileID: 8021760158300783382}
   speedMultiplier: 4.29
   offset: 0
 --- !u!212 &6612905746825864316
@@ -326,7 +326,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260251741048546583, guid: 55ada5e434e1c0c42984e8203620e4b0, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260251741048546583, guid: 55ada5e434e1c0c42984e8203620e4b0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260251741048546583, guid: 55ada5e434e1c0c42984e8203620e4b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260251741048546583, guid: 55ada5e434e1c0c42984e8203620e4b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
