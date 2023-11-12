@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelExit : MonoBehaviour
 {
     public string nextLevelScene;
-
+    AudioSource audioPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class LevelExit : MonoBehaviour
         // check for player
         if(collision.gameObject.CompareTag("Player"))
         {
+            audioPlayer.Play();
             if(nextLevelScene != "") SceneManager.LoadScene(nextLevelScene);
         }
     }
