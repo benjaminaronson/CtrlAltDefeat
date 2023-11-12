@@ -440,6 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e88b2bf4d53742408d2adc0b666c96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeInSpeed: 0.2
+  fadeOutSpeed: 1
+  secondsFull: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

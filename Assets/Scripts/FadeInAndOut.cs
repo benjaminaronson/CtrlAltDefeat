@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class FadeInAndOut : MonoBehaviour
 {
+    public float fadeInSpeed;
+    public float fadeOutSpeed;
+    public float secondsFull = 5;
+
     SpriteRenderer sr;
     private bool isFadingIn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +28,19 @@ public class FadeInAndOut : MonoBehaviour
         {
             if (sr.color.a < 1)
             {
-                sr.color = new Color(1, 1, 1, sr.color.a + 0.0005f);
+                sr.color = new Color(1, 1, 1, sr.color.a + fadeInSpeed * Time.deltaTime);
             }
-            else isFadingIn = false;
-            StartCoroutine(waitFiveSeconds());
+            else
+            {
+                StartCoroutine(waitSeconds(secondsFull));
+                //isFadingIn = false;
+            }
         }
         
         else
         {
             if (sr.color.a > 0) {
-                sr.color = new Color(1, 1, 1, sr.color.a - 0.0005f);
+                sr.color = new Color(1, 1, 1, sr.color.a - fadeOutSpeed * Time.deltaTime);
             }
             else
             {
@@ -41,8 +49,10 @@ public class FadeInAndOut : MonoBehaviour
 
         }
     }
-    IEnumerator waitFiveSeconds()
+    IEnumerator waitSeconds(float time)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(time);
+
+        isFadingIn = false;
     }
 }
