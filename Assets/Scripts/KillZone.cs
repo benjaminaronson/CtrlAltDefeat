@@ -18,10 +18,10 @@ public class KillZone : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collidng!");
-        Debug.Log(collision.gameObject.tag);
+    
 
-        if (collision.gameObject.CompareTag("Player"))
+
+        if (collision.gameObject.CompareTag("Player") && collision.otherCollider.GetType() != typeof(EdgeCollider2D))
         {
             // kill player
             collision.gameObject.GetComponent<PlayerDeath>().die();
