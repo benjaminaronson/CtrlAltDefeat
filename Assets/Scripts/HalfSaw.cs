@@ -29,7 +29,7 @@ public class HalfSaw : Freezable
 					if(collision.gameObject.tag == "Player"){
 							// fun player death logic
 							collision.gameObject.GetComponent<PlayerDeath>().die();
-							Debug.Log("Player died!");
+							
 					}
 			}
 		}
