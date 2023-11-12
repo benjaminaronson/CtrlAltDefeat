@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public GameObject respawnPoint;
-
+    public static int deaths;
     Rigidbody2D rb;
     SpriteRenderer sp;
     float fixedDeltaTime;
@@ -25,15 +25,13 @@ public class PlayerDeath : MonoBehaviour
 
     public void die()
     {
+        deaths++;
         PlayerMovement.dead = true;
-        //StartCoroutine(Died());
+        
         
         // reset velocity
         rb.velocity = Vector3.zero;
-        /*sp.sprite = dead1;
-        StartCoroutine(Died());
-        sp.sprite = dead2;
-        StartCoroutine(Died());*/
+        
         transform.position = respawnPoint.transform.position;
 
         // unfreeze everything
