@@ -7,13 +7,16 @@ public class PlayerDeath : MonoBehaviour
     public GameObject respawnPoint;
 
     Rigidbody2D rb;
-
+    SpriteRenderer sp;
+    public Sprite dead1;
+    public Sprite dead2;
     float fixedDeltaTime;
     // Start is called before the first frame update
     void Start()
     {
         fixedDeltaTime = Time.fixedDeltaTime;
         rb = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,10 @@ public class PlayerDeath : MonoBehaviour
         
         // reset velocity
         rb.velocity = Vector3.zero;
-
+        sp.sprite = dead1;
+        StartCoroutine(Died());
+        sp.sprite = dead2;
+        StartCoroutine(Died());
         transform.position = respawnPoint.transform.position;
 
         // unfreeze everything
@@ -42,10 +48,7 @@ public class PlayerDeath : MonoBehaviour
     }
     IEnumerator Died()
     {
-        Time.timeScale = 0.25f;
-        yield return new WaitForSecondsRealtime(1);
-        Time.timeScale = 1f;
-        PlayerMovement.dead = false;
+        yield return new WaitForSeconds(0.05f);
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)
